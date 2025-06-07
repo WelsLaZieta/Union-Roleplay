@@ -1,0 +1,23 @@
+// Deklarasi global
+new Text:ServerNameTD;
+
+// Saat mode dimulai
+public OnGameModeInit()
+{
+    ServerNameTD = TextDrawCreate(230.000000, 20.000000, "Union Roleplay Indonesia");
+    TextDrawFont(ServerNameTD, 1); // Font 1 = Text biasa
+    TextDrawLetterSize(ServerNameTD, 0.5, 1.5); // Ukuran teks
+    TextDrawAlignment(ServerNameTD, 2); // 2 = tengah
+    TextDrawColor(ServerNameTD, 0xFFFFFFAA); // Warna putih transparan
+    TextDrawSetShadow(ServerNameTD, 1);
+    TextDrawSetOutline(ServerNameTD, 1);
+    TextDrawBackgroundColor(ServerNameTD, 0x00000066); // Latar transparan gelap
+    return 1;
+}
+
+// Tampilkan saat pemain masuk
+public OnPlayerConnect(playerid)
+{
+    TextDrawShowForPlayer(playerid, ServerNameTD);
+    return 1;
+}
